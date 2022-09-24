@@ -1,5 +1,5 @@
 import React from 'react'
-import Temp from './component/Temp'
+import Temp from './components/Temp'
 
 export const App = () => {
   return (
