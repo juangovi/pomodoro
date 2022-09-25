@@ -3,9 +3,10 @@ import Temp from './components/Temp'
 
 export const App = () => {
   return (
-    <div className='flex flex-row'>
+    <div className='min-h-screen flex flex-row divide-x bg-[#937DC2]'>
       <div className='basis-1/4'>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet laboriosam unde veniam suscipit dolorem nisi expedita magni reprehenderit hic deserunt, maxime quos dolore esse culpa dolor illum dolores. Dicta omnis qui nulla. Ex optio at aliquid labore voluptatibus eligendi fuga!
+        <button className='w-full py-3 text-center bg-[#C689C6]  transition-all hover:bg-[#FFABE1] duration-300'>add task</button>
+        <div className='w-full min-h-fit'>a</div>
       </div>
       <div className='basis-3/4'>
         <Temp/>

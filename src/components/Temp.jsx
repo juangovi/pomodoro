@@ -21,6 +21,7 @@ const Temp = () => {
       );
     } else {
       clearInterval(intervalId);
+      setisstart(false)
     }
   };
   const start = () => {
@@ -28,14 +29,15 @@ const Temp = () => {
       run();
       setIntervalId(setInterval(run, 1000));
     }
+    setisstart(true)
   };
   return (
-    <div className="h-screen flex justify-center items-center flex-col">
-      <div className="text-center text-9xl">{time}</div>
+    <div className="h-full flex justify-center items-center flex-col">
+      <div className="text-center text-9xl ">{time}</div>
       <div className="text-xl">
         <button
           onClick={start}
-          className="px-5 py-2 rounded-full bg-blue-400  transition-all hover:bg-pink-500 duration-300"
+          className="px-10 py-2 drop-shadow-lg my-10 rounded-full bg-[#C689C6]  transition-all hover:bg-[#C7B200] duration-300"
         >
           start
         </button>
