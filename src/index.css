@@ -11,3 +11,25 @@ body {
 main {
   @apply h-full;
 }
+/* ===== Scrollbar CSS ===== */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #edadff #fcfcfc;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fcfcfc;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #edadff;
+  border-radius: 10px;
+  border: 0px solid #ffffff;
+}
