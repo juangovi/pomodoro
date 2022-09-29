@@ -5,7 +5,7 @@ import Temp from "./components/Temp";
 export const App = () => {
   return (
     <div className="min-h-screen flex flex-row divide-x bg-[#937DC2]">
-      <div className="basis-1/4 flex-row h-screen overflow-auto">
+      <div className="basis-1/4 h-screen overflow-auto">
         <Menu/>
       </div>
       <div className="basis-3/4">

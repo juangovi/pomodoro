@@ -14,7 +14,8 @@ export const Menu = () => {
       },
     },
     {
-      title: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat?",
+      title:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat?",
       time: {
         min: 10,
         sec: 30,
@@ -33,13 +34,27 @@ export const Menu = () => {
       <div className="w-full divide-y-2 ">
         {lista.map((pomodoro) => {
           return (
-            <div key={pomodoro.title} className="flex-row overflow-hidden h-11 transition-all hover:h-20 duration-500">
-              <div className="text-xl text-center py-2 h-10 uppercase font-medium truncate ... mx-4">
-                {pomodoro.title}
+            <div className="flex flex-row cursor-pointer">
+              <div
+                key={pomodoro.title}
+                className="basis-4/5 overflow-hidden h-11 transition-all hover:h-24 duration-500"
+              >
+                <div className="text-xl w-auto text-center py-2 h-10 uppercase font-medium ml-3">
+                  <div className="truncate">{pomodoro.title}</div>
+                </div>
+                <div className="text-center m-auto">
+                  <div>
+                    <box-icon size="xs" name="time-five"></box-icon>
+                    {pomodoro.time.min}:{pomodoro.time.sec}
+                  </div>
+                  <div>
+                    <box-icon size="xs" type="solid" name="time-five"></box-icon>
+                    {pomodoro.time.min}:{pomodoro.time.sec}
+                  </div>
+                </div>
               </div>
-              <div className="text-center">
-                <box-icon size="xs" name="time-five"></box-icon>
-                <span className="">{pomodoro.time.min}:{pomodoro.time.sec}</span>
+              <div className="basis-1/5 m-auto">
+                <box-icon name="play-circle"></box-icon>
               </div>
             </div>
           );
