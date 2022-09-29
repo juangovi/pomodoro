@@ -34,9 +34,8 @@ export const Menu = () => {
       <div className="w-full divide-y-2 ">
         {lista.map((pomodoro) => {
           return (
-            <div className="flex flex-row cursor-pointer">
+            <div key={pomodoro.title} className="flex flex-row cursor-pointer">
               <div
-                key={pomodoro.title}
                 className="basis-4/5 overflow-hidden h-11 transition-all hover:h-24 duration-500"
               >
                 <div className="text-xl w-auto text-center py-2 h-10 uppercase font-medium ml-3">

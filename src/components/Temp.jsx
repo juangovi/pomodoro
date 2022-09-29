@@ -1,36 +1,36 @@
 import React, { useState } from "react";
 
-const Temp = () => {
-  let mins = 2;
-  let secs = 0;
+const Temp = ({ min = 0, sec = 10 }) => {
+  let mins = min;
+  let secs = sec;
+  const [intervalId, setIntervalId] = useState();
   const [isstart, setisstart] = useState(false);
   const [time, setTime] = useState(
     `${mins < 10 ? `0${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`
   );
-  const [intervalId, setIntervalId] = useState(0);
-  const run = () => {
-    if (mins > 0 || secs > 0) {
-      if (secs == 0) {
-        secs = 59;
-        mins--;
-      } else {
-        secs--;
-      }
-      setTime(
-        `${mins < 10 ? `0${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`
-      );
-    } else {
-      clearInterval(intervalId);
-      setisstart(false)
-    }
-  };
   const start = () => {
-    if (!isstart) {
-      run();
-      setIntervalId(setInterval(run, 1000));
-    }
-    setisstart(true)
+    setisstart(true);
+    setIntervalId
+      const id=setInterval(() => {
+        console.log("a");
+        if (secs === 0) {
+          if (mins === 0) {
+            clearInterval(id);
+            setisstart(false);
+          } else {
+            mins--;
+            secs = 59;
+          }
+        } else {
+          secs--;
+        }
+        setTime(
+          `${mins < 10 ? `0${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`
+        );
+      }, 1000)
   };
+  const stop = () => clearInterval(intervalId);
+  
   return (
     <div className="h-full flex justify-center items-center flex-col">
       <div className="text-center text-9xl ">{time}</div>
