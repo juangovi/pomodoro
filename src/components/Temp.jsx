@@ -3,34 +3,33 @@ import React, { useState } from "react";
 const Temp = ({ min = 0, sec = 10 }) => {
   let mins = min;
   let secs = sec;
-  const [intervalId, setIntervalId] = useState();
   const [isstart, setisstart] = useState(false);
+  const [intervalId, setIntervalId] = useState();
   const [time, setTime] = useState(
     `${mins < 10 ? `0${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`
   );
   const start = () => {
     setisstart(true);
-    setIntervalId
-      const id=setInterval(() => {
-        console.log("a");
-        if (secs === 0) {
-          if (mins === 0) {
-            clearInterval(id);
-            setisstart(false);
-          } else {
-            mins--;
-            secs = 59;
-          }
+    const id = setInterval(() => {
+      console.log("a");
+      if (secs === 0) {
+        if (mins === 0) {
+          clearInterval(id);
+          setisstart(false);
         } else {
-          secs--;
+          mins--;
+          secs = 59;
         }
-        setTime(
-          `${mins < 10 ? `0${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`
-        );
-      }, 1000)
+      } else {
+        secs--;
+      }
+      setTime(
+        `${mins < 10 ? `0${mins}` : mins}:${secs < 10 ? `0${secs}` : secs}`
+      );
+    }, 1000);
+    setIntervalId(id)
   };
-  const stop = () => clearInterval(intervalId);
-  
+
   return (
     <div className="h-full flex justify-center items-center flex-col">
       <div className="text-center text-9xl ">{time}</div>
@@ -41,6 +40,7 @@ const Temp = ({ min = 0, sec = 10 }) => {
         >
           start
         </button>
+        <button onClick={() => clearInterval(intervalId)}>a</button>
       </div>
     </div>
   );
